@@ -1,0 +1,15 @@
+# Dealing with ADMG
+ananke-causal==v0.1.5 # https://gitlab.com/causal/ananke
+
+# Loading Bayesian networks (BNLearn)
+bnlearn==v0.3.7
+pgmpy==0.1.11
+
+# ankurankan
+
+# Kernels
+statsmodels==v0.11.1
+# nnkcde==0.2
+
+# Augmented data fitting & Prediction
+git+https://github.com/takeshi-teshima/few-shot-domain-adaptation-by-causal-mechanism-transfer
