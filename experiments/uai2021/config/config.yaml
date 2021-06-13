@@ -1,0 +1,20 @@
+defaults:
+  - data: gss
+  - method: proposed
+  - method/predictor: xgb
+  - database
+
+debug: False
+# debug: True
+
+recording:
+  experiment_name: first
+  table_name: test
+  recording_set: 1
+  shared_pickle_dir: "pickle/dev"
+  save_model_path: "outputs/saved_models"
+  sacred_artifact_dir: "outputs/sacred_artifact"
+  data_cache_base_path: 'pickle/data'
+
+parallelization:
+  data_run_id: '1'

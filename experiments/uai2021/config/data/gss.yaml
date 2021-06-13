@@ -1,0 +1,11 @@
+data:
+  name: gss
+  module: gss
+  train_size: 0.3
+  data_path: data/gss/testdata.csv
+  graph:
+    path: None
+    loader: load_graph
+
+  preprocess:
+    - normalize: True

@@ -1,0 +1,12 @@
+data:
+  name: sachs_obs
+  module: sachs
+  train_size: 0.3
+  data_path: "data/sachs/main.result.ourvarrs/1. cd3cd28.txt"
+  graph:
+    path: data/sachs/sachs.bif
+    loader: load_consensus_graph
+
+  preprocess:
+    - log_transform: ['Raf', 'Mek', 'PKA']
+    - normalize: True

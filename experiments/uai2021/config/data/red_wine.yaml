@@ -1,0 +1,11 @@
+data:
+  name: red_wine
+  module: wine_quality
+  train_size: 0.3
+  data_path: data/wine_quality/winequality-red.csv
+  graph:
+    path: None
+    loader: estimate_lingam
+
+  preprocess:
+    - normalize: True

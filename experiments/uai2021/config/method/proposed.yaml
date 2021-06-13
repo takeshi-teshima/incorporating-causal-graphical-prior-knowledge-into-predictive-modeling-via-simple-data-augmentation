@@ -1,0 +1,15 @@
+method:
+  name: proposed
+
+  fit_to_aug_only: False
+
+  augmenter_config_name: FullAugment
+  augmenter_config:
+    normalize_threshold_by_data_size: True
+    weight_threshold: 1e-3
+    weight_threshold_type: total
+    weight_kernel_cfg:
+      type: vanilla_kernel
+      const_bandwidth: False
+      bandwidth_temperature: 0.001
+  aug_coeff: [0.5]
