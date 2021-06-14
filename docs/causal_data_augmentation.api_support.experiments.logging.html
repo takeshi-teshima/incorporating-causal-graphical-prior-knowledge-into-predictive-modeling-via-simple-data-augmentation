@@ -1,0 +1,631 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>causal_data_augmentation.api_support.experiments.logging &mdash; Causal Data Augmentation 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="causal_data_augmentation.causal_data_augmentation" href="causal_data_augmentation.causal_data_augmentation.html" />
+    <link rel="prev" title="causal_data_augmentation.api_support.experiments" href="causal_data_augmentation.api_support.experiments.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Causal Data Augmentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="causal_data_augmentation.html">causal_data_augmentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="causal_data_augmentation.html#module-causal_data_augmentation.experiment_api">causal_data_augmentation.experiment_api</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="causal_data_augmentation.api_support.html">causal_data_augmentation.api_support</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="causal_data_augmentation.api_support.html#module-causal_data_augmentation.api_support.eager_augmentation_evaluators">causal_data_augmentation.api_support.eager_augmentation_evaluators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="causal_data_augmentation.api_support.html#module-causal_data_augmentation.api_support.pandas">causal_data_augmentation.api_support.pandas</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="causal_data_augmentation.api_support.html#module-causal_data_augmentation.api_support.typing">causal_data_augmentation.api_support.typing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="causal_data_augmentation.causal_data_augmentation.html">causal_data_augmentation.causal_data_augmentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="causal_data_augmentation.contrib.html">causal_data_augmentation.contrib</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Causal Data Augmentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="causal_data_augmentation.html">causal_data_augmentation</a> &raquo;</li>
+        
+          <li><a href="causal_data_augmentation.api_support.html">causal_data_augmentation.api_support</a> &raquo;</li>
+        
+          <li><a href="causal_data_augmentation.api_support.experiments.html">causal_data_augmentation.api_support.experiments</a> &raquo;</li>
+        
+      <li>causal_data_augmentation.api_support.experiments.logging</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/causal_data_augmentation.api_support.experiments.logging.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="causal-data-augmentation-api-support-experiments-logging">
+<h1>causal_data_augmentation.api_support.experiments.logging<a class="headerlink" href="#causal-data-augmentation-api-support-experiments-logging" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-causal_data_augmentation.api_support.experiments.logging.base">
+<span id="causal-data-augmentation-api-support-experiments-logging-base"></span><h2>causal_data_augmentation.api_support.experiments.logging.base<a class="headerlink" href="#module-causal_data_augmentation.api_support.experiments.logging.base" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.base.RunLogger">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">RunLogger</span></span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.base.RunLogger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The base class of the run_loggers used to record the experiment setup/records.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.base.RunLogger.end_run">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">end_run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.base.RunLogger.end_run" title="Permalink to this definition">¶</a></dt>
+<dd><p>A callback called at the end of the experiment run.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.base.RunLogger.get_tags">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">get_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.base.RunLogger.get_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the tag value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – the key to access the tag value.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.base.RunLogger.log_artifact">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">log_artifact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">artifact_subdir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.base.RunLogger.log_artifact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Record an artifact (e.g., a model) that is already saved at the specified path.
+The behavior may differ among different run loggers.
+For example, this method may retrieve the data in <code class="docutils literal notranslate"><span class="pre">_path</span></code> and save it to another location under the sub-directory <code class="docutils literal notranslate"><span class="pre">artifact_dir</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_path</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>]) – the path where the artifact has been saved.</p></li>
+<li><p><strong>artifact_subdir</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – a string to specify under what sub-directory names the artifact should be stored in the database, remote storage, etc.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.base.RunLogger.log_metrics">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">log_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.base.RunLogger.log_metrics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log the metrics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dic</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]) – the dictionary containing the values to be recorded.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.base.RunLogger.log_params">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">log_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.base.RunLogger.log_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log parameters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.base.RunLogger.log_params_exp_wide">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">log_params_exp_wide</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.base.RunLogger.log_params_exp_wide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log the experiment-wide parameters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.base.RunLogger.set_tags">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">set_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.base.RunLogger.set_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log the tags.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.base.RunLogger.set_tags_exp_wide">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">set_tags_exp_wide</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.base.RunLogger.set_tags_exp_wide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log the experiment-wide tags.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.base.RunLogger.start_run">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">start_run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.base.RunLogger.start_run" title="Permalink to this definition">¶</a></dt>
+<dd><p>A callback called at the beginning of the experiment run.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-causal_data_augmentation.api_support.experiments.logging.mongo_sacred">
+<span id="causal-data-augmentation-api-support-experiments-logging-mongo-sacred"></span><h2>causal_data_augmentation.api_support.experiments.logging.mongo_sacred<a class="headerlink" href="#module-causal_data_augmentation.api_support.experiments.logging.mongo_sacred" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">MongoAndSacredRunLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">experiment_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mongo_table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">artifact_temp_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sacred_artifact/1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared_pickle_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pickle'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#causal_data_augmentation.api_support.experiments.logging.base.RunLogger" title="causal_data_augmentation.api_support.experiments.logging.base.RunLogger"><code class="xref py py-class docutils literal notranslate"><span class="pre">causal_data_augmentation.api_support.experiments.logging.base.RunLogger</span></code></a></p>
+<p>A run logger based on MongoDB and Sacred.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>experiment_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – the name of the experiment.</p></li>
+<li><p><strong>observer</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">MongoObserver</span></code>) – the observer object.</p></li>
+<li><p><strong>mongo_table</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Collection</span></code>) – the table object of PyMongo.</p></li>
+<li><p><strong>artifact_temp_dir</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – the path to the directory that can be used to store the artifacts temporarily.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.end_run">
+<span class="sig-name descname"><span class="pre">end_run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.end_run" title="Permalink to this definition">¶</a></dt>
+<dd><p>A callback called at the end of the experiment run.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.get_current_run_id">
+<span class="sig-name descname"><span class="pre">get_current_run_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.get_current_run_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain the current Sacred run_id.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.get_tags">
+<span class="sig-name descname"><span class="pre">get_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.get_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the tag value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>key</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – the key to access the tag value.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.log_artifact">
+<span class="sig-name descname"><span class="pre">log_artifact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">artifact_subdir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.log_artifact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Record an artifact (e.g., a model) that is already saved at the specified path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_path</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>]) – the path where the artifact has been saved.</p></li>
+<li><p><strong>artifact_subdir</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – a string to specify under what sub-directory names the artifact should be stored in the database, remote storage, etc.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.log_metrics">
+<span class="sig-name descname"><span class="pre">log_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.log_metrics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log the metrics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dic</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]) – the dictionary containing the values to be recorded.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.log_params">
+<span class="sig-name descname"><span class="pre">log_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.log_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.log_params_exp_wide">
+<span class="sig-name descname"><span class="pre">log_params_exp_wide</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.log_params_exp_wide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log the experiment-wide parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.perform_run">
+<span class="sig-name descname"><span class="pre">perform_run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.perform_run" title="Permalink to this definition">¶</a></dt>
+<dd><p>The method to perform an experiment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]) – a function of two variables: <code class="docutils literal notranslate"><span class="pre">(idx,</span> <span class="pre">params)</span></code>.
+<code class="docutils literal notranslate"><span class="pre">idx</span></code> is a string indicating the unique identifier of the experiment run
+that can be used in the function, e.g., to save artifacts with names that are distinct among different runs.</p></li>
+<li><p><strong>params</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>) – the parameters to be passed to <code class="docutils literal notranslate"><span class="pre">func</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here, we capsule the experiment starting procedure of Sacred for the convenience of the user.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.save_artifact">
+<span class="sig-name descname"><span class="pre">save_artifact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.save_artifact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save artifacts as pickles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>) – Artifact to be saved.</p></li>
+<li><p><strong>name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Column name for recording the artifact pickle path.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.set_tags">
+<span class="sig-name descname"><span class="pre">set_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.set_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log the tags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.set_tags_exp_wide">
+<span class="sig-name descname"><span class="pre">set_tags_exp_wide</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.set_tags_exp_wide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log the experiment-wide tags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.start_run">
+<span class="sig-name descname"><span class="pre">start_run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.start_run" title="Permalink to this definition">¶</a></dt>
+<dd><p>A callback called at the beginning of the experiment run.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.update_mongo">
+<span class="sig-name descname"><span class="pre">update_mongo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dic</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.mongo_sacred.MongoAndSacredRunLogger.update_mongo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a dictionary to the MongoDB.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dic</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]) – dictionary containing the key-value pairs to be updated.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-causal_data_augmentation.api_support.experiments.logging.pickler">
+<span id="causal-data-augmentation-api-support-experiments-logging-pickler"></span><h2>causal_data_augmentation.api_support.experiments.logging.pickler<a class="headerlink" href="#module-causal_data_augmentation.api_support.experiments.logging.pickler" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.pickler.Pickler">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Pickler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PosixPath('pickle')</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.pickler.Pickler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Utility class to access the <code class="docutils literal notranslate"><span class="pre">dill</span></code> library.</p>
+<p>Constructor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Relative path to save the file to.</p></li>
+<li><p><strong>base_path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>) – Base path to save the file to (the file is saved to <code class="docutils literal notranslate"><span class="pre">base_path/path</span></code>).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.pickler.Pickler.find_or_create">
+<span class="sig-name descname"><span class="pre">find_or_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.pickler.Pickler.find_or_create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the frozen object or create and freeze the object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>func</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[], <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]) – Callable used to newly create the object.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The created or retrieved object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.pickler.Pickler.load_or_none">
+<span class="sig-name descname"><span class="pre">load_or_none</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.pickler.Pickler.load_or_none" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the frozen object or return <code class="docutils literal notranslate"><span class="pre">None</span></code> if it does not exist.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The object or <code class="docutils literal notranslate"><span class="pre">None</span></code> if it does not exist.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.pickler.Pickler.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.pickler.Pickler.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>content</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>) – Object to save to the file.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-causal_data_augmentation.api_support.experiments.logging.run_wrapper">
+<span id="causal-data-augmentation-api-support-experiments-logging-run-wrapper"></span><h2>causal_data_augmentation.api_support.experiments.logging.run_wrapper<a class="headerlink" href="#module-causal_data_augmentation.api_support.experiments.logging.run_wrapper" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.run_wrapper.RunWrapper">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">RunWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">static_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">static_kwargs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pass_extra_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.run_wrapper.RunWrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A wrapper class to hold the unchanged arguments throughout all runs of Sacred.</p>
+<p>Constructor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> – the function to be wrapped.</p></li>
+<li><p><strong>static_args</strong> – the static arguments.</p></li>
+<li><p><strong>static_kwargs</strong> – the static keyword arguments.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-causal_data_augmentation.api_support.experiments.logging.sanitizers">
+<span id="causal-data-augmentation-api-support-experiments-logging-sanitizers"></span><h2>causal_data_augmentation.api_support.experiments.logging.sanitizers<a class="headerlink" href="#module-causal_data_augmentation.api_support.experiments.logging.sanitizers" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.sanitizers.Sanitizer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Sanitizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">sanitizers=[&lt;function</span> <span class="pre">sanitize_path&gt;,</span> <span class="pre">&lt;function</span> <span class="pre">sanitize_number&gt;]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.sanitizers.Sanitizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Sanitizer class to wrap the sanitization procedure.</p>
+<p>Constructor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sanitizers</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>[[<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]) – The iterable of sanitizers.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.sanitizers.sanitize_number">
+<span class="sig-name descname"><span class="pre">sanitize_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.sanitizers.sanitize_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sanitize the data values to cast to the types that can be handled by MongoDB (via PyMongo).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>v</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>) – The value to be recorded.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="causal_data_augmentation.api_support.experiments.logging.sanitizers.sanitize_path">
+<span class="sig-name descname"><span class="pre">sanitize_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.api_support.experiments.logging.sanitizers.sanitize_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sanitize path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>v</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>) – Maybe a Path. If <code class="docutils literal notranslate"><span class="pre">v</span></code> is a <code class="docutils literal notranslate"><span class="pre">Path</span></code> object, it is converted to a string.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The sanitized object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-causal_data_augmentation.api_support.experiments.logging"></span></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="causal_data_augmentation.causal_data_augmentation.html" class="btn btn-neutral float-right" title="causal_data_augmentation.causal_data_augmentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="causal_data_augmentation.api_support.experiments.html" class="btn btn-neutral float-left" title="causal_data_augmentation.api_support.experiments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Takeshi Teshima.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

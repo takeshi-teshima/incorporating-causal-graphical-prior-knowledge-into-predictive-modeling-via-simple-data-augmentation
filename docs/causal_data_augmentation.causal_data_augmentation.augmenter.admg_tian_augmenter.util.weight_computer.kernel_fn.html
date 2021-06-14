@@ -1,0 +1,469 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn &mdash; Causal Data Augmentation 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="causal_data_augmentation.contrib" href="causal_data_augmentation.contrib.html" />
+    <link rel="prev" title="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer" href="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Causal Data Augmentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="causal_data_augmentation.html">causal_data_augmentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="causal_data_augmentation.html#module-causal_data_augmentation.experiment_api">causal_data_augmentation.experiment_api</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="causal_data_augmentation.api_support.html">causal_data_augmentation.api_support</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="causal_data_augmentation.causal_data_augmentation.html">causal_data_augmentation.causal_data_augmentation</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="causal_data_augmentation.causal_data_augmentation.html#module-causal_data_augmentation.causal_data_augmentation.api">causal_data_augmentation.causal_data_augmentation.api</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="causal_data_augmentation.contrib.html">causal_data_augmentation.contrib</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Causal Data Augmentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="causal_data_augmentation.html">causal_data_augmentation</a> &raquo;</li>
+        
+          <li><a href="causal_data_augmentation.causal_data_augmentation.html">causal_data_augmentation.causal_data_augmentation</a> &raquo;</li>
+        
+          <li><a href="causal_data_augmentation.causal_data_augmentation.augmenter.html">causal_data_augmentation.causal_data_augmentation.augmenter</a> &raquo;</li>
+        
+          <li><a href="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.html">causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter</a> &raquo;</li>
+        
+          <li><a href="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.html">causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util</a> &raquo;</li>
+        
+          <li><a href="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.html">causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer</a> &raquo;</li>
+        
+      <li>causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="causal-data-augmentation-causal-data-augmentation-augmenter-admg-tian-augmenter-util-weight-computer-kernel-fn">
+<h1>causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn<a class="headerlink" href="#causal-data-augmentation-causal-data-augmentation-augmenter-admg-tian-augmenter-util-weight-computer-kernel-fn" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla">
+<span id="causal-data-augmentation-causal-data-augmentation-augmenter-admg-tian-augmenter-util-weight-computer-kernel-fn-vanilla"></span><h2>causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla<a class="headerlink" href="#module-causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.BandwidthNormalReference">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BandwidthNormalReference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.BandwidthNormalReference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to propose the rule-of-thumb bandwidth.</p>
+<p>Constructor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>coeff</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>) – Coefficient to multiply the rule-of-thumb bandwidth.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">VanillaProductKernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vartypes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">VanillaProductKernelConfig(conti_kertype='gaussian',</span> <span class="pre">conti_bw_method='normal_reference',</span> <span class="pre">conti_bw_temperature=1.0,</span> <span class="pre">ordered_kertype='indicator',</span> <span class="pre">ordered_bw_method='indicator',</span> <span class="pre">unordered_kertype='indicator',</span> <span class="pre">unordered_bw_method='indicator')</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Product kernel object.</p>
+<p class="rubric">Notes</p>
+<p>Bandwidth methods: <code class="docutils literal notranslate"><span class="pre">statsmodels.nonparametric.bandwidths</span></code>: <a class="reference external" href="https://www.statsmodels.org/devel/_modules/statsmodels/nonparametric/bandwidths.html">https://www.statsmodels.org/devel/_modules/statsmodels/nonparametric/bandwidths.html</a></p>
+<p>Constructor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_ref</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – Reference data points for which the kernel values are computed.</p></li>
+<li><p><strong>vartypes</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The variable type (‘c’: continuous, ‘o’: ordered, ‘u’: unordered). Example: <code class="docutils literal notranslate"><span class="pre">'ccou'</span></code>.</p></li>
+<li><p><strong>product_kernel_config</strong> – the configuration object.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernel.BW_METHODS">
+<span class="sig-name descname"><span class="pre">BW_METHODS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">{'indicator':</span> <span class="pre">&lt;function</span> <span class="pre">VanillaProductKernel.&lt;lambda&gt;&gt;,</span> <span class="pre">'normal_reference':</span> <span class="pre">&lt;causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.BandwidthNormalReference</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernel.BW_METHODS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernelConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">VanillaProductKernelConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conti_kertype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gaussian'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conti_bw_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'normal_reference'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conti_bw_temperature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ordered_kertype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'indicator'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ordered_bw_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'indicator'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unordered_kertype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'indicator'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unordered_bw_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'indicator'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernelConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A configuration set used for product kernels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conti_kertype</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Default: ‘gaussian’.</p></li>
+<li><p><strong>ordered_kertype</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – statmodels’ original default is ‘wangryzin’.</p></li>
+<li><p><strong>unordered_kertype</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – statmodels’ original default is ‘aitchisonaitken’.</p></li>
+<li><p><strong>conti_bw_method</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – </p></li>
+<li><p><strong>ordered_bw_method</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – </p></li>
+<li><p><strong>unordered_bw_method</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernelConfig.conti_bw_method">
+<span class="sig-name descname"><span class="pre">conti_bw_method</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><em class="property"> <span class="pre">=</span> <span class="pre">'normal_reference'</span></em><a class="headerlink" href="#causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernelConfig.conti_bw_method" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernelConfig.conti_bw_temperature">
+<span class="sig-name descname"><span class="pre">conti_bw_temperature</span></span><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><em class="property"> <span class="pre">=</span> <span class="pre">1.0</span></em><a class="headerlink" href="#causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernelConfig.conti_bw_temperature" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernelConfig.conti_kertype">
+<span class="sig-name descname"><span class="pre">conti_kertype</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><em class="property"> <span class="pre">=</span> <span class="pre">'gaussian'</span></em><a class="headerlink" href="#causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernelConfig.conti_kertype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernelConfig.ordered_bw_method">
+<span class="sig-name descname"><span class="pre">ordered_bw_method</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><em class="property"> <span class="pre">=</span> <span class="pre">'indicator'</span></em><a class="headerlink" href="#causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernelConfig.ordered_bw_method" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernelConfig.ordered_kertype">
+<span class="sig-name descname"><span class="pre">ordered_kertype</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><em class="property"> <span class="pre">=</span> <span class="pre">'indicator'</span></em><a class="headerlink" href="#causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernelConfig.ordered_kertype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernelConfig.unordered_bw_method">
+<span class="sig-name descname"><span class="pre">unordered_bw_method</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><em class="property"> <span class="pre">=</span> <span class="pre">'indicator'</span></em><a class="headerlink" href="#causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernelConfig.unordered_bw_method" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernelConfig.unordered_kertype">
+<span class="sig-name descname"><span class="pre">unordered_kertype</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><em class="property"> <span class="pre">=</span> <span class="pre">'indicator'</span></em><a class="headerlink" href="#causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.VanillaProductKernelConfig.unordered_kertype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.biweight">
+<span class="sig-name descname"><span class="pre">biweight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Xi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.biweight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Biweight kernel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – bandwidth.</p></li>
+<li><p><strong>Xi</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – 1-D ndarray, shape (nobs, 1). The value of the training set.</p></li>
+<li><p><strong>x</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – 1-D ndarray, shape (1, nbatch). The value at which the kernel density is being estimated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The kernel_value at each training point for each var.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ndarray of shape <code class="docutils literal notranslate"><span class="pre">(n_obs,</span> <span class="pre">nbatch)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.bw_normal_reference">
+<span class="sig-name descname"><span class="pre">bw_normal_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">x</span></em>, <em class="sig-param"><span class="pre">kernel=&lt;class</span> <span class="pre">'statsmodels.sandbox.nonparametric.kernels.Gaussian'&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.bw_normal_reference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plug-in bandwidth with kernel specific constant based on normal reference.
+This bandwidth minimizes the mean integrated square error if the true
+distribution is the normal. This choice is an appropriate bandwidth for
+single peaked distributions that are similar to the normal distribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>array_like</em>) – Array for which to get the bandwidth</p></li>
+<li><p><strong>kernel</strong> (<em>CustomKernel object</em>) – Used to calculate the constant for the plug-in bandwidth.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>bw</strong> – The estimate of the bandwidth</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Returns C * A * n ** (-1/5.) where</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">IQR</span><span class="o">/</span><span class="mf">1.349</span><span class="p">)</span>
+<span class="n">IQR</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="mi">75</span><span class="p">,</span><span class="mi">25</span><span class="p">]))</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">constant</span> <span class="kn">from</span> <span class="nn">Hansen</span> <span class="p">(</span><span class="mi">2009</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When using a Gaussian kernel this is equivalent to the ‘scott’ bandwidth up
+to two decimal places. This is the accuracy to which the ‘scott’ constant is
+specified.</p>
+<p class="rubric">References</p>
+<p>Silverman, B.W. (1986) <cite>Density Estimation.</cite>
+Hansen, B.E. (2009) <cite>Lecture Notes on Nonparametrics.</cite></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.epanechnikov">
+<span class="sig-name descname"><span class="pre">epanechnikov</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Xi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.epanechnikov" title="Permalink to this definition">¶</a></dt>
+<dd><p>Epanechnikov kernel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – bandwidth.</p></li>
+<li><p><strong>Xi</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – 1-D ndarray, shape (nobs, 1). The value of the training set.</p></li>
+<li><p><strong>x</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – 1-D ndarray, shape (1, nbatch). The value at which the kernel density is being estimated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The kernel_value at each training point for each var.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ndarray of shape <code class="docutils literal notranslate"><span class="pre">(n_obs,</span> <span class="pre">nbatch)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.indicator_kernel">
+<span class="sig-name descname"><span class="pre">indicator_kernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Xi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.indicator_kernel" title="Permalink to this definition">¶</a></dt>
+<dd><p>The indicator kernel returning one if two elements are equal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – not used. This argument is left for compatibility.</p></li>
+<li><p><strong>Xi</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – 1-D ndarray, shape (nobs, K). The value of the training set.</p></li>
+<li><p><strong>x</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – 1-D ndarray, shape (K, 1). The value at which the kernel density is being estimated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The kernel_value at each training point for each var.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ndarray of shape <code class="docutils literal notranslate"><span class="pre">(n_obs,</span> <span class="pre">K)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.tricube">
+<span class="sig-name descname"><span class="pre">tricube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Xi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.tricube" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tricube kernel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – bandwidth.</p></li>
+<li><p><strong>Xi</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – 1-D ndarray, shape (nobs, 1). The value of the training set.</p></li>
+<li><p><strong>x</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – 1-D ndarray, shape (1, nbatch). The value at which the kernel density is being estimated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The kernel_value at each training point for each var.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ndarray of shape <code class="docutils literal notranslate"><span class="pre">(n_obs,</span> <span class="pre">nbatch)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.triweight">
+<span class="sig-name descname"><span class="pre">triweight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Xi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla.triweight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Triweight kernel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – bandwidth.</p></li>
+<li><p><strong>Xi</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – 1-D ndarray, shape (nobs, 1). The value of the training set.</p></li>
+<li><p><strong>x</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – 1-D ndarray, shape (1, nbatch). The value at which the kernel density is being estimated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The kernel_value at each training point for each var.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ndarray of shape <code class="docutils literal notranslate"><span class="pre">(n_obs,</span> <span class="pre">nbatch)</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn"></span></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="causal_data_augmentation.contrib.html" class="btn btn-neutral float-right" title="causal_data_augmentation.contrib" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.html" class="btn btn-neutral float-left" title="causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Takeshi Teshima.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

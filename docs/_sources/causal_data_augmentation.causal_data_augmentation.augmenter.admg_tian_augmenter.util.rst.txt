@@ -1,0 +1,43 @@
+
+causal\_data\_augmentation.causal\_data\_augmentation.augmenter.admg\_tian\_augmenter.util
+==========================================================================================
+
+
+
+
+causal\_data\_augmentation.causal\_data\_augmentation.augmenter.admg\_tian\_augmenter.util.augmenter\_kernel
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.augmenter_kernel
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+causal\_data\_augmentation.causal\_data\_augmentation.augmenter.admg\_tian\_augmenter.util.pandas
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.pandas
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+
+
+.. role:: raw-html(raw)
+   :format: html
+
+:raw-html:`<br />`
+:raw-html:`<h2>Module contents</h2>`
+
+
+.. automodule:: causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. toctree::
+   :maxdepth: 4
+
+   causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer

@@ -1,0 +1,36 @@
+
+causal\_data\_augmentation
+==========================
+
+
+
+
+causal\_data\_augmentation.experiment\_api
+------------------------------------------
+
+.. automodule:: causal_data_augmentation.experiment_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+
+
+.. role:: raw-html(raw)
+   :format: html
+
+:raw-html:`<br />`
+:raw-html:`<h2>Module contents</h2>`
+
+
+.. automodule:: causal_data_augmentation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. toctree::
+   :maxdepth: 4
+
+   causal_data_augmentation.api_support
+   causal_data_augmentation.causal_data_augmentation
+   causal_data_augmentation.contrib

@@ -1,0 +1,52 @@
+
+causal\_data\_augmentation.api\_support
+=======================================
+
+
+
+
+causal\_data\_augmentation.api\_support.eager\_augmentation\_evaluators
+-----------------------------------------------------------------------
+
+.. automodule:: causal_data_augmentation.api_support.eager_augmentation_evaluators
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+causal\_data\_augmentation.api\_support.pandas
+----------------------------------------------
+
+.. automodule:: causal_data_augmentation.api_support.pandas
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+causal\_data\_augmentation.api\_support.typing
+----------------------------------------------
+
+.. automodule:: causal_data_augmentation.api_support.typing
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+
+
+.. role:: raw-html(raw)
+   :format: html
+
+:raw-html:`<br />`
+:raw-html:`<h2>Module contents</h2>`
+
+
+.. automodule:: causal_data_augmentation.api_support
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. toctree::
+   :maxdepth: 4
+
+   causal_data_augmentation.api_support.experiments

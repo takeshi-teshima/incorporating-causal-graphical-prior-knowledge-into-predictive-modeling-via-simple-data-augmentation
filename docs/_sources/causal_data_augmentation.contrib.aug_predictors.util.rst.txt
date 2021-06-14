@@ -1,0 +1,33 @@
+
+causal\_data\_augmentation.contrib.aug\_predictors.util
+=======================================================
+
+
+
+
+causal\_data\_augmentation.contrib.aug\_predictors.util.grid\_search\_cv
+------------------------------------------------------------------------
+
+.. automodule:: causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+causal\_data\_augmentation.contrib.aug\_predictors.util.timer
+-------------------------------------------------------------
+
+.. automodule:: causal_data_augmentation.contrib.aug_predictors.util.timer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+
+
+.. role:: raw-html(raw)
+   :format: html
+.. automodule:: causal_data_augmentation.contrib.aug_predictors.util
+   :members:
+   :undoc-members:
+   :show-inheritance:

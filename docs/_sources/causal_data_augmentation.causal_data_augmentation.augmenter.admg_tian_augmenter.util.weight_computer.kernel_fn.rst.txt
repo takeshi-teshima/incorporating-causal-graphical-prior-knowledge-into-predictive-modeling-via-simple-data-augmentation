@@ -1,0 +1,24 @@
+
+causal\_data\_augmentation.causal\_data\_augmentation.augmenter.admg\_tian\_augmenter.util.weight\_computer.kernel\_fn
+======================================================================================================================
+
+
+
+
+causal\_data\_augmentation.causal\_data\_augmentation.augmenter.admg\_tian\_augmenter.util.weight\_computer.kernel\_fn.vanilla
+------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn.vanilla
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+
+
+.. role:: raw-html(raw)
+   :format: html
+.. automodule:: causal_data_augmentation.causal_data_augmentation.augmenter.admg_tian_augmenter.util.weight_computer.kernel_fn
+   :members:
+   :undoc-members:
+   :show-inheritance:

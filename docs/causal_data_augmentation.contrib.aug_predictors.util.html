@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>causal_data_augmentation.contrib.aug_predictors.util &mdash; Causal Data Augmentation 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="causal_data_augmentation.contrib.aug_predictors" href="causal_data_augmentation.contrib.aug_predictors.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Causal Data Augmentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="causal_data_augmentation.html">causal_data_augmentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="causal_data_augmentation.html#module-causal_data_augmentation.experiment_api">causal_data_augmentation.experiment_api</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="causal_data_augmentation.api_support.html">causal_data_augmentation.api_support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="causal_data_augmentation.causal_data_augmentation.html">causal_data_augmentation.causal_data_augmentation</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="causal_data_augmentation.contrib.html">causal_data_augmentation.contrib</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="causal_data_augmentation.contrib.html#module-causal_data_augmentation.contrib.eager_augmentation_evaluators">causal_data_augmentation.contrib.eager_augmentation_evaluators</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Causal Data Augmentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="causal_data_augmentation.html">causal_data_augmentation</a> &raquo;</li>
+        
+          <li><a href="causal_data_augmentation.contrib.html">causal_data_augmentation.contrib</a> &raquo;</li>
+        
+          <li><a href="causal_data_augmentation.contrib.aug_predictors.html">causal_data_augmentation.contrib.aug_predictors</a> &raquo;</li>
+        
+      <li>causal_data_augmentation.contrib.aug_predictors.util</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/causal_data_augmentation.contrib.aug_predictors.util.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="causal-data-augmentation-contrib-aug-predictors-util">
+<h1>causal_data_augmentation.contrib.aug_predictors.util<a class="headerlink" href="#causal-data-augmentation-contrib-aug-predictors-util" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv">
+<span id="causal-data-augmentation-contrib-aug-predictors-util-grid-search-cv"></span><h2>causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv<a class="headerlink" href="#module-causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv" title="Permalink to this headline">¶</a></h2>
+<p>Scikit-learn’s cross validation does not take into account the sample weights for computing the validation scores.</p>
+<p class="rubric">References</p>
+<p><a class="reference external" href="https://stackoverflow.com/questions/49581104/sklearn-gridsearchcv-not-using-sample-weight-in-score-function">https://stackoverflow.com/questions/49581104/sklearn-gridsearchcv-not-using-sample-weight-in-score-function</a>
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/4632">https://github.com/scikit-learn/scikit-learn/issues/4632</a>
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/2879#issuecomment-487789482">https://github.com/scikit-learn/scikit-learn/issues/2879#issuecomment-487789482</a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv.InstanceWeightedGridSearchCVBase">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">InstanceWeightedGridSearchCVBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">estimator,</span> <span class="pre">param_grid,</span> <span class="pre">*args,</span> <span class="pre">cv=3,</span> <span class="pre">greater_is_better=False,</span> <span class="pre">metrics=[&lt;function</span> <span class="pre">mean_squared_error&gt;],</span> <span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv.InstanceWeightedGridSearchCVBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for the instance weighted grid-search cross-validation.</p>
+<p>Constructor.</p>
+<dl class="simple">
+<dt>Parameters</dt><dd><p>estimator : Trainable predictor compatible with Sklearn’s <code class="docutils literal notranslate"><span class="pre">BaseEstimator</span></code>.
+param_grid : The parameter grid to select the hyper-parameter from.
+cv : The number of splits to use for the cross validation.
+<a href="#id1"><span class="problematic" id="id2">*</span></a>args : The other unnamed arguments.
+greater_is_better : Whether to the greater metric is better.
+metrics : The metric to use for evaluating the performance.
+kwargs : The other keyword arguments.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv.InstanceWeightedGridSearchCVBase.PREDICTOR_PIPELINE_NAME">
+<span class="sig-name descname"><span class="pre">PREDICTOR_PIPELINE_NAME</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'predictor'</span></em><a class="headerlink" href="#causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv.InstanceWeightedGridSearchCVBase.PREDICTOR_PIPELINE_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv.InstanceWeightedGridSearchCVBase.SAMPLE_WEIGHT_COLUMN">
+<span class="sig-name descname"><span class="pre">SAMPLE_WEIGHT_COLUMN</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'__sample_weight'</span></em><a class="headerlink" href="#causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv.InstanceWeightedGridSearchCVBase.SAMPLE_WEIGHT_COLUMN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv.InstanceWeightedGridSearchCVBase.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv.InstanceWeightedGridSearchCVBase.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform grid-search based on the cross-validation scores.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>) – Training input data.</p></li>
+<li><p><strong>Y</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>) – Training target data.</p></li>
+<li><p><strong>sample_weight</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>) – Array of instance weights.</p></li>
+<li><p><strong>*args</strong> – Placeholder.</p></li>
+<li><p><strong>**kwargs</strong> – Placeholder.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv.InstanceWeightedGridSearchCVBase.get_best_estimator">
+<span class="sig-name descname"><span class="pre">get_best_estimator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv.InstanceWeightedGridSearchCVBase.get_best_estimator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the best-performing estimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Best performing estimator.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv.PandasInstanceWeightedGridSearchCV">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">PandasInstanceWeightedGridSearchCV</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">estimator,</span> <span class="pre">param_grid,</span> <span class="pre">*args,</span> <span class="pre">cv=3,</span> <span class="pre">greater_is_better=False,</span> <span class="pre">metrics=[&lt;function</span> <span class="pre">mean_squared_error&gt;],</span> <span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv.PandasInstanceWeightedGridSearchCV" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv.InstanceWeightedGridSearchCVBase" title="causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv.InstanceWeightedGridSearchCVBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">causal_data_augmentation.contrib.aug_predictors.util.grid_search_cv.InstanceWeightedGridSearchCVBase</span></code></a></p>
+<p>Perform cross-validation given the data in the <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> format.</p>
+<p>Constructor.</p>
+<dl class="simple">
+<dt>Parameters</dt><dd><p>estimator : Trainable predictor compatible with Sklearn’s <code class="docutils literal notranslate"><span class="pre">BaseEstimator</span></code>.
+param_grid : The parameter grid to select the hyper-parameter from.
+cv : The number of splits to use for the cross validation.
+<a href="#id3"><span class="problematic" id="id4">*</span></a>args : The other unnamed arguments.
+greater_is_better : Whether to the greater metric is better.
+metrics : The metric to use for evaluating the performance.
+kwargs : The other keyword arguments.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-causal_data_augmentation.contrib.aug_predictors.util.timer">
+<span id="causal-data-augmentation-contrib-aug-predictors-util-timer"></span><h2>causal_data_augmentation.contrib.aug_predictors.util.timer<a class="headerlink" href="#module-causal_data_augmentation.contrib.aug_predictors.util.timer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="causal_data_augmentation.contrib.aug_predictors.util.timer.Timer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Timer</span></span><a class="headerlink" href="#causal_data_augmentation.contrib.aug_predictors.util.timer.Timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The timer class. It can be used as a decorator by <code class="docutils literal notranslate"><span class="pre">set()</span></code>.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nd">@Timer</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[Timer] The method took:&#39;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">time</span><span class="p">))</span>
+<span class="gp">... </span><span class="k">def</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="causal_data_augmentation.contrib.aug_predictors.util.timer.Timer.set">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#causal_data_augmentation.contrib.aug_predictors.util.timer.Timer.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility to decorate functions.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-causal_data_augmentation.contrib.aug_predictors.util"></span></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="causal_data_augmentation.contrib.aug_predictors.html" class="btn btn-neutral float-left" title="causal_data_augmentation.contrib.aug_predictors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Takeshi Teshima.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
