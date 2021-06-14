@@ -9,6 +9,11 @@ $ jupyter notebook
 ```
 
 # Preparation
+## Preparing the data
+The data files need to be prepared by going into each directory in `../suite/*` and running `$ make`.
+See the `README.md` in each data directory for details.
+
+## Preparing the database
 This experiment depends on MongoDB to store the intermediate results.
 
 1. Install this repository by following the [README.md](https://github.com/takeshi-teshima/incorporating-causal-graphical-prior-knowledge-into-predictive-modeling-via-simple-data-augmentation/blob/master/README.md).

@@ -48,7 +48,6 @@ def load_bif(path: str) -> GraphType:
     verbose = 0
     bnlearn_model = bnlearn.import_DAG(path, CPD=is_DAG, verbose=verbose)
     bayesian_model, adjmat = bnlearn_model['model'], bnlearn_model['adjmat']
-    # bnlearn.plot(bayesian_model)
     adjmat = adjmat.drop(VARIABLES_REMOVED, axis=1).drop(VARIABLES_REMOVED,
                                                          axis=0)
     vertices = adjmat.columns

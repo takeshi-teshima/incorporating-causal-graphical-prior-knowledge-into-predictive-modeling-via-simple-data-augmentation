@@ -22,7 +22,6 @@ def load_data(path: str) -> pd.DataFrame:
                        delim_whitespace=True,
                        na_values='?')
     data = data.dropna()
-    # data = data.astype('float')
     data = data.drop(VARIABLES_REMOVED, axis=1)
     return data
 

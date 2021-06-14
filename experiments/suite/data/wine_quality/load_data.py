@@ -13,8 +13,6 @@ def get_predicted_variable_name():
 def load_data(path: str) -> pd.DataFrame:
     df = pd.read_csv(path)
     data = pd.read_csv(path, sep=';')
-    # data = data.dropna()
-    # data = data.astype('float')
     data = data.drop(VARIABLES_REMOVED, axis=1)
     return data
 
