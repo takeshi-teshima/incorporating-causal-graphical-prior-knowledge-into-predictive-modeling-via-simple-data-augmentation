@@ -25,9 +25,7 @@ Are causal discovery methods beneficial for machine learning tasks?
 ## Install
 ```bash
 $ pip install git+https://github.com/takeshi-teshima/incorporating-causal-graphical-prior-knowledge-into-predictive-modeling-via-simple-data-augmentation
-
 $ pip install -r requirements.txt
-$ pip install -r requirements-no-deps.txt --no-dependencies
 
 # To reproduce the experiments of our UAI2021 paper:
 $ pip install -r experiments/uai2021/requirements.txt
@@ -35,7 +33,7 @@ $ pip install -r experiments/uai2021/requirements.txt
 
 OR clone this repository and run
 ```bash
-$ pip install .
+$ make install
 ```
 and the package will be installed under the name of `causal-data-augmentation` (the module name will be `causal_data_augmentation`).
 

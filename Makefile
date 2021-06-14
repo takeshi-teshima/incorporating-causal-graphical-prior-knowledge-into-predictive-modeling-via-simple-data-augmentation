@@ -15,3 +15,8 @@ install-dev:
 
 open-docs:
 	xdg-open docs/index.html
+
+install:
+	pip install -r requirements.txt
+	pip install -e .
+	cd experiments/uai2021; pip install -r requirements.txt
