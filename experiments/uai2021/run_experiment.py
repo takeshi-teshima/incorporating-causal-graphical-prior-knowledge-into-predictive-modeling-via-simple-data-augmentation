@@ -8,12 +8,12 @@ import numpy as np
 import torch
 from sklearn.model_selection import train_test_split
 
-from causal_data_augmentation.api_support.experiments.logging import MongoAndSacredRunLogger, PandasParamHistoryManager
+from causal_data_augmentation.api_support.experiments.logging import MongoAndSacredRunLogger
+from causal_data_augmentation.api_support.experiments.logging.pickler import Pickler
 import causal_data_augmentation.causal_data_augmentation.api_support.method_config as method_config_module
 from support.database.records_aggregator import MongoAggregator
 from support.database.mongo import get_mongo_observer, get_table
 import support.estimate_causal_graph as estimate_causal_graph
-from causal_data_augmentation.api_support.experiments.logging.pickler import Pickler
 
 # Importing experiment suite from the parent directory.
 import sys
