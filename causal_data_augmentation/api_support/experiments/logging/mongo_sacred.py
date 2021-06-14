@@ -48,7 +48,7 @@ class MongoAndSacredRunLogger(RunLogger):
         """A callback called at the end of the experiment run."""
         pass
 
-    def perform_run(self, func: Callable[[str, Any], Any], params: Any = {}):
+    def perform_run(self, func: Callable[[str, Any], Any], params: Any = {}) -> Any:
         """The method to perform an experiment.
 
         Parameters:
@@ -61,7 +61,7 @@ class MongoAndSacredRunLogger(RunLogger):
             Here, we capsule the experiment starting procedure of Sacred for the convenience of the user.
         """
         @self.ex.main
-        def _main(_run):
+        def _main(_run) -> Any:
             """The local method defined to wrap the run for interfacing with Sacred."""
             self._run = _run
             self.mongo_record_id = self.mongo_table.insert_one(
@@ -124,17 +124,17 @@ class MongoAndSacredRunLogger(RunLogger):
         """
         return self._run.info.get(key)
 
-    def set_tags_exp_wide(self, tags_dict: Dict[str, Any]):
+    def set_tags_exp_wide(self, tags_dict: Dict[str, Any]) -> None:
         """Log the experiment-wide tags."""
         self.exp_wide_info.update(tags_dict)
 
-    def log_params_exp_wide(self, params_dict: Dict[str, Any]):
+    def log_params_exp_wide(self, params_dict: Dict[str, Any]) -> None:
         """Log the experiment-wide parameters."""
         self.exp_wide_info.update(params_dict)
 
     def log_metrics(self,
                     dic: Dict[str, Union[float, int]],
-                    step: Optional[int] = None):
+                    step: Optional[int] = None) -> None:
         """Log the metrics.
 
         Parameters:
@@ -149,7 +149,7 @@ class MongoAndSacredRunLogger(RunLogger):
                 self._run.info[key] = val
                 self.update_mongo({key: val})
 
-    def log_artifact(self, _path: Union[str, Path], artifact_subdir: str):
+    def log_artifact(self, _path: Union[str, Path], artifact_subdir: str) -> None:
         """Record an artifact (e.g., a model) that is already saved at the specified path.
 
         Parameters:
@@ -170,7 +170,13 @@ class MongoAndSacredRunLogger(RunLogger):
                 str(self.artifact_temp_dir_path / artifact_subdir /
                     _path.name))
 
-    def save_artifact(self, data: Any, name: str):
+    def save_artifact(self, data: Any, name: str) -> None:
+        """Save artifacts as pickles.
+
+        Parameters:
+            data : Artifact to be saved.
+            name : Column name for recording the artifact pickle path.
+        """
         self.shared_pickle_dir.mkdir(parents=True, exist_ok=True)
         pickler = Pickler(self.shared_pickle_dir / name)
         pickler.save(data)

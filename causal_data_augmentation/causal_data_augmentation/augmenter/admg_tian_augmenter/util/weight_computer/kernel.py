@@ -6,20 +6,23 @@ from typing import Callable
 
 
 class KernelWeightComputer(WeightComputer):
+    """Kernel-based weight computer class."""
+
     def __init__(self, kernel: Callable[[np.ndarray], np.ndarray]):
         """
-        Params:
+        Parameters:
             kernel : a callable object that returns the kernel matrix given the data.
         """
         self.kernel = kernel
 
-    def __call__(self, data):
+    def __call__(self, data) -> np.ndarray:
         """Compute the weighting matrix.
 
         Parameters:
             data : ndarray of shape ``(n_data, n_dim)``.
 
-        Returns: ndarray of shape ``(n_data, n_data_ref)``
+        Returns:
+            ndarray of shape ``(n_data, n_data_ref)``.
         """
         _gram_matrix = self.kernel(data)
 

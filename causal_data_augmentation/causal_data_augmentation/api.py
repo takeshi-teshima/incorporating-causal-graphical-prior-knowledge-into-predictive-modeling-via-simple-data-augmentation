@@ -2,12 +2,11 @@
 import numpy as np
 
 # Type hinting
-from typing import Iterable, Optional, Union
+from typing import Iterable, Optional, Union, Tuple
 import pandas as pd
 from ananke.graphs import ADMG
 from .api_support.method_config import *
 from .augmenter.admg_tian_augmenter.augmenter_full import ADMGTianFullAugmenter
-from .util import build_batch
 
 
 class EagerCausalDataAugmentation:
@@ -25,10 +24,15 @@ class EagerCausalDataAugmentation:
         self.validate_config(method_config)
         self.method_config = method_config
 
-    def validate_config(self, method_config):
+    def validate_config(self, method_config: AugmenterConfig) -> None:
+        """Check the validity of the method config.
+
+        Parameters:
+            method_config : Method configuration to be validated.
+        """
         pass
 
-    def augment(self, data: pd.DataFrame, estimated_graph: ADMG):
+    def augment(self, data: pd.DataFrame, estimated_graph: ADMG) -> Tuple[pd.DataFrame, np.ndarray]:
         """Generate augmented data. Does not consider overlapping, etc., against the original data.
 
         Parameters:
@@ -36,8 +40,10 @@ class EagerCausalDataAugmentation:
             estimated_graph: The ADMG object used for performing the augmentation.
 
         Returns:
-            (augmented_data, weights) : if ``self.sampling_method`` is ``'full'``.
-            augmented_data : if ``self.sampling_method`` is ``'stochastic'``.
+            One of the following:
+
+            - Tuple of ``(augmented_data, weights)`` : if ``self.sampling_method`` is ``'full'``.
+            - augmented_data : if ``self.sampling_method`` is ``'stochastic'``.
 
         Examples:
             >> weight_threshold = 1e-5

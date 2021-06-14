@@ -14,11 +14,11 @@ from typing import Optional, Iterable, Union, Dict, List
 class AugXGBRegressor:
     """Boosted-tree regressor."""
     def __init__(self,
-                 predicted_var_name: str,
-                 grid_params: Optional[Dict[str, List]] = None,
-                 val_data: Optional[np.ndarray] = None):
+                 predicted_var_name:str,
+                 grid_params:Optional[Dict[str, List]]=None,
+                 val_data:Optional[np.ndarray]=None):
         """Constructor.
-        Params:
+        Parameters:
             grid_params : Hyper-parameters to cross-validate over.
         """
         self.predicted_var_name = predicted_var_name
@@ -57,18 +57,6 @@ class AugXGBRegressor:
             Y = train_data[[self.predicted_var_name]]
             if self.val_data is None:
                 if self.grid_params is not None:
-                    # self.grid_params.update({'min_child_weight': [1 / len(X)]})
-                    # GridSearchCV.get_best_estimator = lambda self: self.best_estimator_
-                    # gs = GridSearchCV(XGBRegressor(),
-                    #                   self.grid_params,
-                    #                   cv=3,
-                    #                   n_jobs=1,
-                    #                   verbose=2)
-                    # gs = PandasAmendedGridSearchCV(XGBRegressor(),
-                    #                                self.grid_params,
-                    #                                cv=3,
-                    #                                n_jobs=1,
-                    #                                verbose=2)
                     gs = PandasInstanceWeightedGridSearchCV(XGBRegressor(),
                                                             self.grid_params,
                                                             cv=3,
@@ -87,12 +75,6 @@ class AugXGBRegressor:
                     'Implement the code to use self.val_data to select the parameters.'
                 )
                 self.model = XGBRegressor()
-                # self.model.cv(grid_params, (x, y), num_boost_round=200, nfold=3)
-                # self.model.fit(x,
-                #                y,
-                #                sample_weight=sample_weight,
-                #                eval_set=self.val_data,
-                #                verbose=True)
         except Exception as e:
             raise
             # print(e)
@@ -102,16 +84,8 @@ class AugXGBRegressor:
 
         Parameters:
             X: input data (shape ``(n_sample, n_dim)``).
+
+        Returns:
+            The output of the model.
         """
-        # X = np.array(X)
         return self.model.predict(X)
-
-
-# x: np.ndarray,
-# y: np.ndarray,
-# aux_x: Optional[np.ndarray] = None,
-# aux_y: Optional[np.ndarray] = None,
-# x: the predictor variables in the original data.
-# y: the predicted variable in the original data.
-# aux_x: the predictor variables in the augmented data.
-# aux_y: the predicted variable in the augmented data.

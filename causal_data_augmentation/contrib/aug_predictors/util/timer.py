@@ -4,6 +4,34 @@ import timeit
 from typing import Callable, Optional
 
 
+class Timer:
+    """The timer class. It can be used as a decorator by ``set()``.
+
+    Example:
+        >>> @Timer.set(lambda t: print('[Timer] The method took:', t.time))
+        ... def evaluate(a: int):
+        ...     return a ** 2
+    """
+    def __enter__(self):
+        """Start the timer."""
+        self.start = timeit.default_timer()
+        return self
+
+    def __exit__(self, *args):
+        """End the timer."""
+        self.stop = timeit.default_timer()
+        self.time = self.stop - self.start
+
+    def __str__(self):
+        """Stringify the timer values."""
+        return f'Duration: {self.time}, Start: {self.start}, Stop: {self.stop}'
+
+    @classmethod
+    def set(cls, *args, **kwargs):
+        """Utility to decorate functions."""
+        return _TimerDecorator(*args, **kwargs)
+
+
 class _TimerDecorator:
     """Provides the decorator functionality to the Timer class."""
     def __init__(self,
@@ -17,7 +45,13 @@ class _TimerDecorator:
         self.callback = callback
         self.with_args = with_args
 
-    def default_callback(self, t, func: Callable):
+    def default_callback(self, t: Timer, func: Callable) -> None:
+        """The default callback function for the decorator.
+
+        Parameters:
+            t : The timer object.
+            func : The decorated function object.
+        """
         print(f'Function {func.__name__}() took {t.time} seconds.')
 
     def __call__(self, func: Callable):
@@ -49,31 +83,3 @@ class _TimerDecorator:
                 return _res
 
         return _decorated_func
-
-
-class Timer:
-    """The timer class. It can be used as a decorator by ``set()``.
-
-    Example:
-        >>> @Timer.set(lambda t: print('[Timer] The method took:', t.time))
-        ... def evaluate(a: int):
-        ...     return a ** 2
-    """
-    def __enter__(self):
-        """Start the timer."""
-        self.start = timeit.default_timer()
-        return self
-
-    def __exit__(self, *args):
-        """End the timer."""
-        self.stop = timeit.default_timer()
-        self.time = self.stop - self.start
-
-    def __str__(self):
-        """Stringify the timer values."""
-        return f'Duration: {self.time}, Start: {self.start}, Stop: {self.stop}'
-
-    @classmethod
-    def set(cls, *args, **kwargs):
-        """Utility to decorate functions."""
-        return _TimerDecorator(*args, **kwargs)

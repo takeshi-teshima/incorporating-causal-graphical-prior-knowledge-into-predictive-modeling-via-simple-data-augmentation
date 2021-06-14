@@ -22,10 +22,11 @@ CONTI_OR_DISC = {
 
 
 class ADMGTianAugmenterBase:
+    """Base class for the proposed augmentation method based on the Tian factorization (topological ADMG factorization)."""
     def __init__(self, graph: ADMG, top_order: Optional[List[str]] = None):
         """Constructor.
 
-        Params:
+        Parameters:
             graph : the ADMG model to be used for the data augmentation.
             top_order : a valid topological order on the graph (a list of the vertex names).
                         If ``None`` is provided, it is automatically computed from the graph (default: ``None``).
@@ -35,8 +36,12 @@ class ADMGTianAugmenterBase:
             top_order = self.graph.topological_sort()
         self.graph_top_order = top_order
 
-    def prepare(self, data: DF, weight_kernel_cfg: dict) -> Tuple[DF, DF]:
+    def prepare(self, data: DF, weight_kernel_cfg: dict):
         """Perform Tian factorization and fit weight functions for the conditioning variables.
+
+        Parameters:
+            data : Data to be passed to the augmenter to prepare for the augmentation (typically the training data).
+            weight_kernel_cfg : Configuration of the kernels.
 
         Notes:
             See https://gitlab.com/causal/ananke/-/blob/master/ananke/graphs/sg.py for ``districts`` of ADMG.

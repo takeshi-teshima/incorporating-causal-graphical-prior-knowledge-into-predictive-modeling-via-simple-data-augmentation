@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=CausalDA
+set SPHINXPROJ=CausalDataAugmentation
 
 if "%1" == "" goto help
 

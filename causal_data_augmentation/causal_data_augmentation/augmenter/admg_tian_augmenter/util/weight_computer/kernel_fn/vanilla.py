@@ -10,30 +10,30 @@ import sys
 MINIMUM_CONTI_BANDWIDTH = 1e-100
 
 
-def indicator_kernel(h: np.ndarray, Xi: np.ndarray, x: np.ndarray):
-    """
-    Params:
+def indicator_kernel(h: np.ndarray, Xi: np.ndarray, x: np.ndarray) -> np.ndarray:
+    """The indicator kernel returning one if two elements are equal.
+
+    Parameters:
         h : not used. This argument is left for compatibility.
         Xi : 1-D ndarray, shape (nobs, K). The value of the training set.
         x : 1-D ndarray, shape (K, 1). The value at which the kernel density is being estimated.
 
     Returns:
-        kernel_value : ndarray, shape (n_obs, K).
-                       The value of the kernel function at each training point for each var.
+        ndarray of shape ``(n_obs, K)``: The kernel_value at each training point for each var.
     """
     return (Xi - x) == 0
 
 
-def epanechnikov(h: np.ndarray, Xi: np.ndarray, x: np.ndarray):
+def epanechnikov(h: np.ndarray, Xi: np.ndarray, x: np.ndarray) -> np.ndarray:
     """Epanechnikov kernel.
-    Params:
+
+    Parameters:
         h : bandwidth.
         Xi : 1-D ndarray, shape (nobs, 1). The value of the training set.
         x : 1-D ndarray, shape (1, nbatch). The value at which the kernel density is being estimated.
 
     Returns:
-        kernel_value : ndarray, shape (n_obs, nbatch).
-                       The value of the kernel function at each training point for each var.
+        ndarray of shape ``(n_obs, nbatch)``: The kernel_value at each training point for each var.
     """
     u = (Xi - x) / h
     out = 3 / 4 * (1 - u**2) * (np.abs(u) <= 1)
@@ -41,17 +41,16 @@ def epanechnikov(h: np.ndarray, Xi: np.ndarray, x: np.ndarray):
     return out
 
 
-def triweight(h: np.ndarray, Xi: np.ndarray, x: np.ndarray):
+def triweight(h: np.ndarray, Xi: np.ndarray, x: np.ndarray) -> np.ndarray:
     """Triweight kernel.
 
-    Params:
+    Parameters:
         h : bandwidth.
         Xi : 1-D ndarray, shape (nobs, 1). The value of the training set.
         x : 1-D ndarray, shape (1, nbatch). The value at which the kernel density is being estimated.
 
     Returns:
-        kernel_value : ndarray, shape (n_obs, nbatch).
-                       The value of the kernel function at each training point for each var.
+        ndarray of shape ``(n_obs, nbatch)``: The kernel_value at each training point for each var.
     """
     u = (Xi - x) / h
     out = 35 / 32 * (np.maximum(0, 1 - u**2)**3)
@@ -59,17 +58,16 @@ def triweight(h: np.ndarray, Xi: np.ndarray, x: np.ndarray):
     return out
 
 
-def biweight(h: np.ndarray, Xi: np.ndarray, x: np.ndarray):
+def biweight(h: np.ndarray, Xi: np.ndarray, x: np.ndarray) -> np.ndarray:
     """Biweight kernel.
 
-    Params:
+    Parameters:
         h : bandwidth.
         Xi : 1-D ndarray, shape (nobs, 1). The value of the training set.
         x : 1-D ndarray, shape (1, nbatch). The value at which the kernel density is being estimated.
 
     Returns:
-        kernel_value : ndarray, shape (n_obs, nbatch).
-                       The value of the kernel function at each training point for each var.
+        ndarray of shape ``(n_obs, nbatch)``: The kernel_value at each training point for each var.
     """
     u = (Xi - x) / h
     out = 15 / 16 * (np.maximum(0, 1 - u**2)**2)
@@ -77,17 +75,16 @@ def biweight(h: np.ndarray, Xi: np.ndarray, x: np.ndarray):
     return out
 
 
-def tricube(h: np.ndarray, Xi: np.ndarray, x: np.ndarray):
+def tricube(h: np.ndarray, Xi: np.ndarray, x: np.ndarray) -> np.ndarray:
     """Tricube kernel.
 
-    Params:
+    Parameters:
         h : bandwidth.
         Xi : 1-D ndarray, shape (nobs, 1). The value of the training set.
         x : 1-D ndarray, shape (1, nbatch). The value at which the kernel density is being estimated.
 
     Returns:
-        kernel_value : ndarray, shape (n_obs, nbatch).
-                       The value of the kernel function at each training point for each var.
+        ndarray of shape ``(n_obs, nbatch)``: The kernel_value at each training point for each var.
     """
     u = (Xi - x) / h
     out = 70 / 81 * (np.maximum(0, 1 - np.abs(u)**3)**3)
@@ -126,7 +123,7 @@ kernel_func = dict(
 class VanillaProductKernelConfig:
     """A configuration set used for product kernels.
 
-    Params:
+    Parameters:
         conti_kertype : Default: 'gaussian'.
         ordered_kertype : statmodels' original default is 'wangryzin'.
         unordered_kertype : statmodels' original default is 'aitchisonaitken'.
@@ -145,10 +142,9 @@ class VanillaProductKernelConfig:
     unordered_bw_method: str = 'indicator'
 
 
-def bw_normal_reference(x, kernel=sandbox_kernels.Gaussian):
+def bw_normal_reference(x: np.ndarray, kernel=sandbox_kernels.Gaussian) -> float:
     """
     Plug-in bandwidth with kernel specific constant based on normal reference.
-
     This bandwidth minimizes the mean integrated square error if the true
     distribution is the normal. This choice is an appropriate bandwidth for
     single peaked distributions that are similar to the normal distribution.
@@ -190,10 +186,21 @@ def bw_normal_reference(x, kernel=sandbox_kernels.Gaussian):
 
 
 class BandwidthNormalReference:
-    def __init__(self, coeff=1):
+    """Class to propose the rule-of-thumb bandwidth."""
+    def __init__(self, coeff:float=1):
+        """Constructor.
+
+        Parameters:
+            coeff : Coefficient to multiply the rule-of-thumb bandwidth.
+        """
         self.coeff = coeff
 
-    def __call__(self, *args, **kwargs):
+    def __call__(self, *args, **kwargs) -> float:
+        """Compute the bandwidth.
+
+        Returns:
+            Computed bandwidth.
+        """
         return self.coeff * bw_normal_reference(*args, **kwargs)
 
 
@@ -216,7 +223,7 @@ class VanillaProductKernel:
             config: VanillaProductKernelConfig = VanillaProductKernelConfig()):
         """Constructor.
 
-        Params:
+        Parameters:
             data_ref : Reference data points for which the kernel values are computed.
             vartypes : The variable type ('c': continuous, 'o': ordered, 'u': unordered). Example: ``'ccou'``.
             product_kernel_config : the configuration object.
@@ -231,9 +238,10 @@ class VanillaProductKernel:
         self.conti_bw_temperature = config.conti_bw_temperature
         self._fit(data_ref)
 
-    def _fit(self, data_ref):
-        """
-        Params:
+    def _fit(self, data_ref: np.ndarray) -> None:
+        """Fit the product kernel.
+
+        Parameters:
             data_ref : ndarray of shape ``(n_obs, n_dim)`` the kernel centers.
         """
         self.data_ref = data_ref
@@ -252,13 +260,14 @@ class VanillaProductKernel:
                     bw = MINIMUM_CONTI_BANDWIDTH
             self.bandwidths.append(bw)
 
-    def __call__(self, data):
+    def __call__(self, data: np.ndarray) -> np.ndarray:
         """Compute the kernel matrix ``(k(data_i, data_ref_j))_{ij}``.
 
         Parameters:
             data : ndarray of shape ``(n_data, n_dim)``.
 
-        Returns: ndarray of shape ``(n_data, n_data_ref)``
+        Returns:
+            ndarray of shape ``(n_data, n_data_ref)``.
         """
         gram_matrices = []
         for k, vtype in enumerate(self.vartypes):
@@ -266,5 +275,4 @@ class VanillaProductKernel:
             gram_matrix = func(self.bandwidths[k], data[:, k][:, None],
                                self.data_ref[:, k][None, :])
             gram_matrices.append(gram_matrix)
-        # assert np.isnan(np.array(gram_matrices).prod(axis=0)).sum() == 0
         return np.array(gram_matrices).prod(axis=0)
