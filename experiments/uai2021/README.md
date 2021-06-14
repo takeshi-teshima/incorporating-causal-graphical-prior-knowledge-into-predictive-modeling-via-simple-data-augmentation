@@ -1,6 +1,13 @@
 # Experiments
 This directory contains the code for reproducing the experimental results.
 
+# Reproducing the figures in the paper
+```
+$ make decompress-records
+$ jupyter notebook
+# Open and run Results.ipynb.
+```
+
 # Preparation
 This experiment depends on MongoDB to store the intermediate results.
 
